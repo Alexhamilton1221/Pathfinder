@@ -1,3 +1,29 @@
+@import url('https://cdn.syncfusion.com');
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
+@font-face{
+    font-family:'button-icons';
+    src:url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAA);
+    font-weight:normal;
+    font-style:normal;
+ }
+ .e-play-icon::before{
+    font-family:'button-icons';
+    content:"\e701";
+ }
+
 .grid {
     margin: 100px 0 0;
+  }
+
+  .moveimage
+  {
+      position: relative;
+      top: 0px;
+  }
+
+  .main_button
+  {
+      position: relative;
+      top: 1000px;
   }

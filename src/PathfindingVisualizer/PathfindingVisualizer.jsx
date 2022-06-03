@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 
+
 import './PathfindingVisualizer.css';
+
+import {ButtonComponent} from '@syncfusion/ej2-react-buttons';
+
+ 
 
 const START_NODE_ROW = 10;
 const START_NODE_COL = 15;
@@ -76,12 +81,39 @@ export default class PathfindingVisualizer extends Component {
   render() {
     const {grid, mouseIsPressed} = this.state;
 
+  
+  
+var img = new Image(); 
+var div = document.getElementById('foo'); 
+ 
+img.onload = function() { 
+  div.appendChild(img); 
+}; 
+ 
+
+
+
+
+    //create button component and implement 
     return (
       <>
-        <button onClick={() => this.visualizeDijkstra()}>
-          Visualize Dijkstra's Algorithm
-        </button>
-        <div className="grid">
+      <img class="moveimage" src="./light_blue.jpg" width="5000" height="100" alt='Backdrop'/>
+
+{/* <img src={require('./light_blue.jpg') }width="5000" height="100" alt="Background" /> */}
+
+
+
+        <ButtonComponent class='main_button' 
+        cssClass='e-info'
+        //iconCss='e'
+        
+        onClick={() => this.visualizeDijkstra()}>
+            Visualize Dijkstra's Algorithm 
+            
+            </ButtonComponent>
+            
+            <div className="grid">
+              
           {grid.map((row, rowIdx) => {
             return (
               <div key={rowIdx}>
@@ -101,16 +133,22 @@ export default class PathfindingVisualizer extends Component {
                       }
                       onMouseUp={() => this.handleMouseUp()}
                       row={row}></Node>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-      </>
-    );
-  }
-}
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        );
+      }
+    }
+    
+
+
+
+
+
 
 const getInitialGrid = () => {
   const grid = [];
